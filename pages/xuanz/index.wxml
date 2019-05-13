@@ -1,0 +1,18 @@
+<wxs src="./util.wxs" module="tools" /> <!-- 自定义过滤器 -->
+<view class='box'>
+  <view class='content'>红色：已选择 /  绿色：正在选择</view>
+  <view wx:for="{{seats}}"  wx:for-item="seat" wx:key="index"><!-- 两层循环 -->
+    <view wx:for="{{seat}}" 
+          wx:key='index'
+          wx:for-index="idx" 
+          wx:for-item="item" 
+          class="{{( tools.fn(myselectSite, item.num).indexOf?'active':item.userInfo!=null?'used':'seat')}}" 
+          style="{{idx%2!==0&&'margin-right:40rpx'}}"
+          bindtap='selctedSite' 
+          data-num='{{item.num}}'
+          data-used='{{item.userInfo==null}}'><!-- 根据不同的判断定义class，绑定点击事件，传输数据 -->
+     {{item.num}}
+    </view>
+  </view>
+  <view class='content'>您选择了：{{myselectSite}}</view><!-- 展示选择的座位号 -->
+</view>

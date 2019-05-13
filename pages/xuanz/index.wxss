@@ -1,0 +1,28 @@
+.box{
+  width: 240px;
+  margin:20rpx auto; 
+  padding-left:-40rpx;
+}
+
+
+.seat,.used,.active{
+  display: inline-block;
+  width: 70rpx;
+  margin:10rpx;
+  text-align: center;
+}
+.seat{
+  background-color: gainsboro;
+}
+.used{
+  background-color: red;
+}
+.active{
+  background-color: green;
+}
+
+
+.content{
+  font-size: 30rpx;
+  padding:40rpx 0;
+}
